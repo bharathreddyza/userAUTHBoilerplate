@@ -1,0 +1,15 @@
+<%- include('./partials/header') -%>
+
+<% for(var i =0 ;i <data.length ; i++){%>
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="https://lh3.googleusercontent.com/a-/AOh14GiFoSnolxJV23eCeltSPnJEgaiSpfAMgzJ1Jr7G=s96-cc-rg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><%= data[i].productName %></h5>
+      <p class="card-text"></p>
+      <a href="/orders" class="btn btn-primary">order</a>
+    </div>
+  </div>
+
+<%}%>
+
+    <%- include('./partials/footer') -%>

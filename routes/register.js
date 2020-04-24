@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const db = require('../models')
 const nodemailer = require('nodemailer')
+const passport = require('passport')
 
 
 const transporter = nodemailer.createTransport({
@@ -10,12 +11,18 @@ const transporter = nodemailer.createTransport({
   secure : false,
   auth : {
     user : "bharathreddyza@gmail.com",
-    pass : "back3654/"
+    pass : "aaa"
   },
   tls : {
     rejectUnauthorized : false
   }
 })
+
+
+/* GET users listing. */
+// Path - '/users/'
+
+
 
 
 
@@ -27,9 +34,9 @@ router.get('/', function(req, res, next) {
   res.render('register');
 });
 
-router.get('/login',(req,res)=>{
-  res.render('login')
-})
+// router.get('/login',(req,res)=>{
+//   res.render('login')
+// })
 
 // save to the database on signing up 
 //path -> /register
@@ -73,5 +80,7 @@ router.post('/',(req,res)=>{
   }
   })
 })
+
+
 
 module.exports = router;

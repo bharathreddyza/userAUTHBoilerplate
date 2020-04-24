@@ -6,6 +6,10 @@ console.log(`Database is connected`)
 console.error(err)
 })
 const USERS = require('./users') //imported from users.js
+const PRODUCTS = require('./products')
+const ORDERS = require('./orders')
 module.exports = {
-USERS
+USERS,
+PRODUCTS,
+ORDERS
 }

@@ -1,13 +1,9 @@
-var express = require('express');
-var router = express.Router();
-
-
-
+const express = require('express')
+const router = express.Router()
+const isLoggedIn  =require('../middleware/index')
+ 
 router.get('/',(req,res)=>{
-  res.render('home')
+    res.render("home")
 })
 
-router.post('/',(req,res)=>{
-  res.render('home')
-})
-  module.exports = router
+module.exports = router

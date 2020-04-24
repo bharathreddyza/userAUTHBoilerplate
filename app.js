@@ -9,6 +9,7 @@ const db = require('./models')
 const passport = require('passport')
 const session = require('express-session')
 const LocalStrategy = require('passport-local').Strategy
+var gravatar = require('gravatar');
 
 var app = express();
 var flash=require("connect-flash");
@@ -96,7 +97,8 @@ app.use((req,res,next)=>{
   next()
 })
 
-
+var url = gravatar.url('currentUser.email', {s: '200', r: 'pg', d: '404'});
+console.log(url)
 
 // app.use(function (req, res, next) {
 //   res.locals.success_msg = req.flash('success_msg');

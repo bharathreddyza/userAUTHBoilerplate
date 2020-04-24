@@ -5,12 +5,14 @@ const productSchema = new Schema({
         type : String
     },
     price : {
-        type : Number
+        type : String
     },
     createdOn:{
         type : Date,
         default : Date.now()
-    }
+    },
+    description:String,
+    image:String
 })
 
 const PRODUCTS = mongoose.model('PRODUCTS',productSchema)

@@ -1,12 +1,13 @@
 const express = require('express')
 const router = express.Router()
 const db = require('../models')
+const isLoggedIn  =require('../middleware/index')
 
 // Get = get all orders 
 
-router.get('/',(req,res)=>{
-    db.ORDERS.find().populate(['userId','productid'],)
-    .then((data)=>res.render('orders',{data:data}))
+router.get('/',isLoggedIn,(req,res)=>{
+    db.ORDERS.find().populate(['userId','productid'])
+    .then((data)=>res.render('orders',{data:data},console.log("data",data)))
     .catch((err)=>res.send(err))
 })
 

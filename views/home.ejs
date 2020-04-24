@@ -1,4 +1,30 @@
 <%- include('./partials/header') -%>
 
-    <h1>stay HOME stay SAFE  </h1>
-    <%- include('./partials/footer') -%>
+<div class="jumbotron">
+    <h1 class="display-4">Hey,this is bharath</h1>
+    <p class="lead">Mailer is a simple ecommerce app which registers a user,restricts page access and sends a Thank you mail </p>
+    <hr class="my-4">
+    <p>Here i will try to explain how i built this app and the packages used to builf the app</p>
+    <p class="lead">
+      <% if(!currentUser){ %>
+
+      <a class="btn btn-primary btn-lg" href="/register" role="button">sign up</a>
+      <% } else{  %>
+        <a class="btn btn-primary btn-lg" href="/logout" role="button">logout</a>
+        <% } %>
+
+    </p>
+      <h1>featured Products</h1>
+
+
+        <div class="container">
+        <div class="card">
+          <img style="width: 400px;" src="<%= data[0].image %>" style="width:100%">
+          <h1> <%= data[0].productName %> </h1>
+          <h2 ><%= data[0].price %></h2>
+          <p><%= data[0].description %> </p>
+          <p><a href="/products" class="btn btn-info">view products</a></p>
+        </div>
+      </div>
+
+  </div>    <%- include('./partials/footer') -%>

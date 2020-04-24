@@ -3,7 +3,7 @@ var path = require('path');
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 
-const port = 3200 || process.env.PORT ;
+const port =  process.env.PORT || 5000;
 const bodyParser = require('body-parser')
 const db = require('./models')
 const passport = require('passport')

@@ -43,10 +43,12 @@ const comparePassword = function(enteredPassword,hash,callBack){
         callBack(null,isEqual)
     })
 
-    // Get User By Id 
-const getUserById = function(id,callback){
-    USERS.findOne({_id : id}, callback)
+ 
 }
+
+   // Get User By Id 
+   const getUserById = function(id,callback){
+    USERS.findOne({_id : id}, callback)
 }
 
 module.exports = {

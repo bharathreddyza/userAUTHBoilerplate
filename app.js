@@ -9,8 +9,7 @@ const db = require('./models')
 const passport = require('passport')
 const session = require('express-session')
 const LocalStrategy = require('passport-local').Strategy
-var gravatar = require('gravatar');
-
+ 
 var app = express();
 var flash=require("connect-flash");
 
@@ -40,7 +39,6 @@ app.use(session({
   // cookie: { secure: true }
 }))
 
-//init passport
 
 app.use(passport.initialize())
 app.use(passport.session())
@@ -94,20 +92,11 @@ app.use((req,res,next)=>{
   console.log(res.locals)
   // res.locals.user = req.user 
   res.locals.currentUser = req.user
+
+  
   next()
 })
 
-var url = gravatar.url('currentUser.email', {s: '200', r: 'pg', d: '404'});
-console.log(url)
-
-// app.use(function (req, res, next) {
-//   res.locals.success_msg = req.flash('success_msg');
-//   res.locals.error_msg = req.flash('error_msg');
-//   res.locals.error = req.flash('error');
-//   res.locals.user = req.user || null;
-//   next();
-// });
-//routes
 
 const productsRouter = require('./routes/products')
 var registerRouter = require('./routes/register');
@@ -131,23 +120,5 @@ app.get('/logout',(req,res)=>{
 
   });
 }) 
-
-
-// app.use(function(req, res, next) {
-//     next(createError(404));
-//   });
-
-// //  error handler
-// app.use(function(err, req, res, next) {
-//     // set locals, only providing error in development
-//     res.locals.message = err.message;
-//     res.locals.error = req.app.get('env') === 'development' ? err : {};
-  
-//     // render the error page
-//     res.status(err.status || 500);
-//     res.render('error');
-//   });
-
-
 
 app.listen(port,()=>console.log(`port is running at ${port}`))

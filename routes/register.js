@@ -10,8 +10,9 @@ const transporter = nodemailer.createTransport({
   service : "Gmail",
   secure : false,
   auth : {
-    user : "bharathreddyza@gmail.com",
-    pass : "back3654/"
+
+    user : "youremail@gmail.com",
+    pass : "your mail password here"
   },
   tls : {
     rejectUnauthorized : false
@@ -19,32 +20,19 @@ const transporter = nodemailer.createTransport({
 })
 
 
-/* GET users listing. */
-// Path - '/users/'
-
-
-
-
-
 // http method GET 
 // res send  a register page 
-
 
 router.get('/', function(req, res, next) {
   res.render('register');
 });
 
-// router.get('/login',(req,res)=>{
-//   res.render('login')
-// })
+
 
 // save to the database on signing up 
 //path -> /register
 
 router.post('/',(req,res)=>{
-    
-  console.log(req.body)
-
   const newUser = new db.USERS.USERS({
     userName : req.body.userName,
     email : req.body.email,

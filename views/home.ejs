@@ -2,9 +2,9 @@
 
 <div class="jumbotron">
     <h1 class="display-4">Hey,this is bharath</h1>
-    <p class="lead">Mailer is a simple ecommerce app which registers a user,restricts page access and sends a Thank you mail </p>
+    <p class="lead">Mailer is a simple user Authentification app </p>
     <hr class="my-4">
-    <p>Here i will try to explain how i built this app and the packages used to builf the app</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus qui necessitatibus vero, veritatis rerum, maiores quo sit dolorem, in fuga dolore officia debitis doloribus magni voluptate repudiandae nesciunt. Rem, et.</p>
     <p class="lead">
       <% if(!currentUser){ %>
 
@@ -14,15 +14,6 @@
         <% } %>
 
     </p>
-      <h1>featured Products</h1>
-
-
-        <div class="card  col-md-4">
-          <img src="<%= data[0].image %>" style="width:100%">
-          <h1> <%= data[0].productName %> </h1>
-          <h2 ><%= data[0].price %></h2>
-          <p><%= data[0].description %> </p>
-          <p><a href="/register" class="btn btn-info">view products</a></p>
-        </div>
+      
 
   </div>    <%- include('./partials/footer') -%>

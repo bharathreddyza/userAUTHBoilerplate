@@ -34,10 +34,7 @@ const getUserByEmail = function(email,callBack){
     USERS.findOne({email:email},callBack)
 }
 
-// Get User By Id 
-const getUserById = function(id,callback){
-    USERS.findOne({_id : id}, callback)
-}
+
 
 // to compare the passowrds 
 const comparePassword = function(enteredPassword,hash,callBack){
@@ -45,6 +42,11 @@ const comparePassword = function(enteredPassword,hash,callBack){
         if(err) throw err;
         callBack(null,isEqual)
     })
+
+    // Get User By Id 
+const getUserById = function(id,callback){
+    USERS.findOne({_id : id}, callback)
+}
 }
 
 module.exports = {
